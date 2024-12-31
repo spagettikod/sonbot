@@ -9,11 +9,12 @@ import (
 
 	"github.com/spagettikod/sonbot/energy"
 	"github.com/spagettikod/sonbot/store"
+	"github.com/spagettikod/thepriceisright"
 )
 
 const (
 	DefaultPort    = "6161"
-	DefaultDbPath  = "/data/tpir.db"
+	DefaultDbPath  = "/data/sonbot.db"
 	UpdateInterval = 30 * time.Minute
 	AreaCodeLabel  = "area_code"
 )
@@ -57,7 +58,7 @@ func main() {
 	exporter := Exporter{}
 	exporter.DB, err = store.NewSQLiteStore(dbpath)
 	if err != nil {
-		slog.Error("error opening database", "err", err, "file", "tpir.db")
+		slog.Error("error opening database", "err", err, "file", dbpath)
 		os.Exit(1)
 	}
 	exporter.Battery = energy.NewSonnenBatteryClient(batteryHost, batteryPort, batteryApiToken)

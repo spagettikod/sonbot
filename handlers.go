@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/spagettikod/sonbot/store"
+	"github.com/spagettikod/thepriceisright"
 )
 
 func consumptionHandler(ex Exporter) func(http.ResponseWriter, *http.Request) {

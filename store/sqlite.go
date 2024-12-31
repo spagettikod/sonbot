@@ -62,7 +62,7 @@ var (
 			price REAL NOT NULL,
 			exchange_rate_sek REAL NOT NULL,
 			consumption REAL NOT NULL,
-			production REAL NOT NULL,
+			production REAL NOT NULL
 		) STRICT`,
 	}
 )
